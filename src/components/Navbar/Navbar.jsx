@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import { IoMdSearch } from "react-icons/io";
 import DarkMode from "./DarkMode";
 const MenuLinks = [
@@ -22,6 +22,23 @@ const MenuLinks = [
     id: 4,
     name: "Blog",
     link: "/#blog",
+  },
+];
+const DropdownLinks = [
+  {
+    id: 1,
+    name: "Trending Products",
+    link: "/#",
+  },
+  {
+    id: 2,
+    name: "Best Selling",
+    link: "/#shop",
+  },
+  {
+    id: 3,
+    name: "Top Rated",
+    link: "/#about",
   },
 ];
 const Navbar = () => {
@@ -52,6 +69,28 @@ const Navbar = () => {
                       </a>
                     </li>
                   ))}
+                  {/* Dropdown */}
+                  <li className="relative cursor-pointer group">
+                    <a 
+                        href="#" 
+                        className="flex items-center gap-[2px] font-semibold text-gray-500
+                                    hover:text-black dark:hover:text-white py-2 duration-200">
+                        Quick Links
+                        <span>
+                          <FaCaretDown className="group-hover:rotate-180 duration-300" />
+                        </span>
+                    </a>
+                      {/* Dropdown links */}
+                      <div>
+                        <ul>
+                          {
+                            DropdownLinks.map((data, index) => (
+                              <li key={index}>{data.name}</li>
+                            ))
+                          }
+                        </ul>
+                      </div>
+                  </li>
                 </ul>
               </div>
             </div>
