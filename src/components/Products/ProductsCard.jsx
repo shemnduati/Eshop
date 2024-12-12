@@ -10,9 +10,10 @@ const ProductsCard = ({data}) => {
                 data.map((data) => (
                     <div className='group' key={data.id}>
                         <div className='relative'>
-                            <img src={data.img} alt={data.title} className='[h-180px] w-[260px] object-cover rounded-md' />
+                            <img src={data.img} alt={data.title} className='h-[180px] w-[260px] object-cover rounded-md' />
                              {/* Hover Button */}
-                        <div className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full text-center group-hover:backdrop-blur-sm'>
+                        <div className='hidden group-hover:flex absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-full w-full text-center 
+                                        group-hover:backdrop-blur-sm justify-center items-center duration-200'>
                             <Button text={"Add to Cart"} bgColor={"bg-primary"} textColor={"text-white"} />
                         </div>
                         </div>
