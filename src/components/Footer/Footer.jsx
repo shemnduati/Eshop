@@ -1,8 +1,116 @@
-import React from 'react'
+import React from 'react';
+import { FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaLocationArrow } from 'react-icons/fa';
+import { FaMobile } from 'react-icons/fa6';
+
+const FooterLinks = [
+  {
+    title: "Home",
+    link: "/#"
+  },
+  {
+    title: "About",
+    link: "/#about"
+  },
+  {
+    title: "Contact",
+    link: "/#contact"
+  },
+  {
+    title: "Blog",
+    link: "/#blog"
+  }
+]
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='dark:bg-gray-950'>
+      <div className='container'>
+        <div className='grid md:grid-cols-3 pd-20 pt-5'>
+          {/* Comapany details */}
+          <div className='py-8 px-4'>
+          <a
+              href="#"
+              className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl
+                                        duration-200 relative z-40"
+            >
+              Eshop
+            </a>
+            <p className='text-gray-600 lg:pr-24 pt-3 dark:text-white/70'>
+                   Explore the latest in cutting-edge electronics, designed to enhance your life with innovation and reliability. Shop now for unbeatable deals and expert support!
+            </p>
+            <p className='text-gray-500 nt-4'>Made with ❤️ by Shem Nduati</p>
+          </div>
+          {/* Footer links */}
+          <div className='col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10'>
+            <div className='py-8 px-4'>
+              <h1 className='text-xl font-bold sm:text-left mb-3'>Important Links</h1>
+              <ul className='space-y-3'>
+                {
+                  FooterLinks.map((data, index) =>(
+                    <li key={index}>
+                      <a
+                        href={data.link}
+                        className='text-gray-600 hover:text-black duration-300 dark:text-gray-400 hover:dark:text-white'
+                      >
+                        {data.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            {/* second col links */}
+            <div className='py-8 px-4'>
+              <h1 className='text-xl font-bold sm:text-left mb-3'>Quick Links</h1>
+              <ul className='space-y-3'>
+                {
+                  FooterLinks.map((data, index) =>(
+                    <li key={index}>
+                      <a
+                        href={data.link}
+                        className='text-gray-600 hover:text-black duration-300 dark:text-gray-400 hover:dark:text-white'
+                      >
+                        {data.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            {/* Company Address */}
+            <div className='py-8 px-4 col-span-2 sm:col-auto'>
+            <h1 className='text-xl font-bold sm:text-left mb-3'>Address</h1>
+              <div>
+                <div className='flex items-center gap-3'>
+                  <FaLocationArrow className='text-2xl text-primary dark:text-white' />
+                  <p>Nairobi, Kasarani</p>
+                </div>
+                <div className='flex items-center gap-3 mt-6'>
+                  <FaMobile className='text-2xl text-primary dark:text-white' />
+                  <p>+254 715511302</p>
+                </div>
+                <div className='flex items-center gap-3 mt-6'>
+                  <FaGlobe className='text-2xl text-primary dark:text-white' />
+                  <p>Kenya</p>
+                </div>
+              </div>
+              {/* social links */}
+              <div className='flex items-center gap-3 mt-6'>
+                <a href='#'>
+                  <FaFacebook className='text-3xl hover:text-primary duration-300'/>
+                </a>
+                <a href='#'>
+                  <FaInstagram className='text-3xl hover:text-primary duration-200'/>
+                </a>
+                <a href='#'>
+                  <FaLinkedin className='text-3xl hover:text-primary duration-300'/>
+                </a>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
