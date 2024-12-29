@@ -8,7 +8,10 @@ const ProductsCard = ({data}) => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
             {
                 data.map((data) => (
-                    <div className='group' key={data.id}>
+                    <div  data-aos='fade-up'
+                            data-aos-delay={data.aosDelay}
+                            className='group' 
+                            key={data.id}>
                         <div className='relative'>
                             <img src={data.img} alt={data.title} className='h-[180px] w-[260px] object-cover rounded-md' />
                              {/* Hover Button */}
